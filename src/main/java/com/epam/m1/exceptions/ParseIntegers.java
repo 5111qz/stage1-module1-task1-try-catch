@@ -24,10 +24,11 @@ public class ParseIntegers {
             try {
                 int number = Integer.parseInt(next);
                 sum += number;
-            } catch (Exception e) {
-                justWords += next;
+            } catch (NumberFormatException e) {
+                justWords += next + " ";
             }
         }
+        justWords = justWords.trim();
         System.out.println("Sum is " + sum);
         System.out.println("Just words:" + justWords);
     }
