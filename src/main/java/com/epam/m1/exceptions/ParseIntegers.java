@@ -3,13 +3,10 @@ package com.epam.m1.exceptions;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- * Complete the code, parse integers, calculate the sum of numbers in the WORDS, join strings with
- * space delimiter
- */
-public class ParseIntegers {
-
+class ParseIntegers {
     private static final List<String> WORDS =
             Arrays.asList(
                     "JDK 17 has released on 14 September 2021 with 10 new features, 2 feature removals and 2 feature deprecations."
@@ -27,11 +24,12 @@ public class ParseIntegers {
                 sum += number;
             } catch (NumberFormatException e) {
                 stringBuilder.append(next).append(" ");
+                justWords += next + " ";
             }
         }
         justWords = stringBuilder.toString().trim();
-        System.err.println("Sum is " + sum);
-        System.err.println("Just words:" + justWords);
+        Logger logger = Logger.getLogger(ParseIntegers.class.getName());
+        logger.log(Level.INFO, "Sum is ", sum);
+        logger.log(Level.INFO, "Just words: ", justWords);
     }
 }
-
