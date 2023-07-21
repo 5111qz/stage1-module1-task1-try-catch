@@ -28,7 +28,7 @@ class ParseIntegers {
         }
         justWords = stringBuilder.toString().trim();
         Logger logger = Logger.getLogger(ParseIntegers.class.getName());
-        logger.log(Level.INFO, "Sum is ", sum);
-        logger.log(Level.INFO, "Just words: ", justWords);
+        logger.log(Level.INFO, "Sum is "+ sum);
+        logger.log(Level.INFO, "Just words: " + justWords);
     }
 }
